@@ -6,7 +6,7 @@
 ]]
 
 -- 1) Load the library. Replace the URL with your own raw link.
-local Library = loadstring(game:HttpGet("https://github.com/ritsuakano-dev/OrusWare-KavoUILib/blob/main/Main.luau"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ritsuakano-dev/OrusWare-KavoUILib/refs/heads/main/Main.luau"))()
 
 -- 2) (Optional but recommended) Executor-safe cloneref helper.
 --    The library already uses cloneref internally, but if you reference
