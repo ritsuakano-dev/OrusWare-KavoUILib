@@ -33,7 +33,7 @@ This edition replaces all of that with a single **event-driven theme system**: c
 ## 📦 Installation
 
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/USER/REPO/main/Main.luau"))()
+local Library = loadstring(game:HttpGet("https://github.com/ritsuakano-dev/OrusWare-KavoUILib/blob/main/Main.luau"))()
 ```
 
 Replace `USER/REPO` with your own repository path.
@@ -43,7 +43,7 @@ Replace `USER/REPO` with your own repository path.
 ## ⚡ Quick start
 
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/USER/REPO/main/Main.luau"))()
+local Library = loadstring(game:HttpGet("https://github.com/ritsuakano-dev/OrusWare-KavoUILib/blob/main/Main.luau"))()
 
 local Window = Library.CreateLib("My Hub", "DarkTheme")
 
