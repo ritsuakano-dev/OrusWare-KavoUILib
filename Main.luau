@@ -261,8 +261,13 @@ function Kavo.CreateLib(kavName, themeList)
 
     kavName = kavName or "Library"
     table.insert(Kavo, kavName)
-    for i,v in pairs(CoreGui:GetChildren()) do
-        if v:IsA("ScreenGui") and v.Name == kavName then
+    -- Remove any previously created Kavo window so re-running the script
+    -- replaces the old UI instead of stacking a duplicate on top of it.
+    -- The visible name is randomised for anti-detection, so we can't match
+    -- on it across runs; instead every window is tagged with an attribute
+    -- and we destroy anything carrying that tag (old name kept as fallback).
+    for _, v in ipairs(CoreGui:GetChildren()) do
+        if v:IsA("ScreenGui") and (v:GetAttribute("KavoUILib") or v.Name == kavName) then
             v:Destroy()
         end
     end
@@ -297,6 +302,7 @@ function Kavo.CreateLib(kavName, themeList)
     blurFrame.ZIndex = 999
 
     ScreenGui.Name = LibName
+    ScreenGui:SetAttribute("KavoUILib", true)
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     ScreenGui.ResetOnSpawn = false
     protectGui(ScreenGui)
